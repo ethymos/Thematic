@@ -76,9 +76,9 @@ add_filter( 'widget_title', 'thematic_filter_search_widget', 10, 3 );
  */
 class Thematic_Widget_Meta extends WP_Widget {
 
-	function Thematic_Widget_Meta() {
+	function __construct() {
 		$widget_ops = array('classname' => 'widget_meta', 'description' => __( "Log in/out and admin", 'thematic') );
-		$this->WP_Widget('thematic-meta', __('Thematic Meta', 'thematic'), $widget_ops);
+		parent::__construct('thematic-meta', __('Thematic Meta', 'thematic'), $widget_ops);
 	}
 
 	function widget( $args, $instance ) {
@@ -122,9 +122,9 @@ class Thematic_Widget_Meta extends WP_Widget {
  */
 class Thematic_Widget_RSSlinks extends WP_Widget {
 
-	function Thematic_Widget_RSSlinks() {
+	function __construct() {
 		$widget_ops = array( 'description' => __('Links to your posts and comments feed', 'thematic') );
-		$this->WP_Widget( 'rss-links', __('RSS Links', 'thematic'), $widget_ops);
+		parent::__construct( 'rss-links', __('RSS Links', 'thematic'), $widget_ops);
 	}
 
 	function widget($args, $instance) {
